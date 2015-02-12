@@ -80,7 +80,7 @@ class Consumer:
         tmpFileBaseName = os.path.basename(filePath)
 
         #target file name formatted to sort alphabetacally by newest file and be safe from duplicates
-        targetFileName = "%04d-%02d-%02d-%d-%07d-%s" % (now.year, now.month, now.day, time.mktime(now.timetuple()), now.microsecond, tmpFileBaseName)
+        targetFileName = "%04d-%02d-%02d/%d-%07d-%s" % (now.year, now.month, now.day, time.mktime(now.timetuple()), now.microsecond, tmpFileBaseName)
         targetFullPath = self.s3TargetPrefix + targetFileName
 
         s3CmdOutput = subprocess.check_output([self.s3CmdDir + "/s3cmd", "put", filePath, targetFullPath])
