@@ -22,7 +22,7 @@ class Consumer:
     def __init__(self, s3CmdDir, kafkaBinDir, s3TargetPrefix, kafkaTopic, blockSize = 1024 * 1024 * 10, zookeeper = "localhost:2181", dataPreprocessorCallback = None):
         self.s3CmdDir = s3CmdDir.rstrip("/")
         self.kafkaBinDir = kafkaBinDir.rstrip("/")
-        self.s3TargetPrefix = s3TargetPrefix.rstrip("/")
+        self.s3TargetPrefix = s3TargetPrefix
         self.kafkaTopic = kafkaTopic
         self.blockSize = blockSize
         self.zookeeper = zookeeper
